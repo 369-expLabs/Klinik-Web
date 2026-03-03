@@ -41,6 +41,7 @@ const config: Config = {
         geist: ["Satoshi", "sans-serif"], // aliased backward compat
         outfit: ["Satoshi", "sans-serif"], // aliased backward compat
         inter: ["Satoshi", "sans-serif"],  // aliased backward compat
+        mono: ["JetBrains Mono", "monospace"],
       },
       boxShadow: {
         'glow': '0 0 20px rgba(33, 67, 38, 0.4)',
