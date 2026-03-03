@@ -62,7 +62,7 @@ export default function Solution() {
           scrollTrigger: {
             trigger: containerRef.current,
             start: "top 75%",
-          }
+          },
         }
       );
     }, containerRef);
@@ -92,7 +92,7 @@ export default function Solution() {
             <div
               key={i}
               ref={(el) => { cardsRef.current[i] = el; }}
-              className={`bg-cream-dark rounded-2xl p-7 border border-cream-dark hover:border-sage/40 hover:shadow-md transition-all duration-200 relative ${i % 2 === 0 ? "md:translate-y-10" : ""
+              className={`premium-glass-card p-7 relative ${i % 2 === 0 ? "md:translate-y-10" : ""
                 }`}
             >
               {usp.badge && (
@@ -109,6 +109,6 @@ export default function Solution() {
           ))}
         </div>
       </div>
-    </section >
+    </section>
   );
 }

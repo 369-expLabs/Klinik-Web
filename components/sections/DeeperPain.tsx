@@ -1,3 +1,10 @@
+"use client";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const questions = [
   "Pernah tiba-tiba takut sesuatu yang buruk akan terjadi, padahal tidak ada alasan jelas?",
   "Merasa sendirian meski dikelilingi banyak orang — bahkan orang-orang yang kamu cintai?",
@@ -6,8 +13,36 @@ const questions = [
 ];
 
 export default function DeeperPain() {
+  const sectionRef = useRef<HTMLElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        cardsRef.current,
+        { opacity: 0, y: 24 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.65,
+          stagger: 0.12,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: "top 75%",
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section className="bg-sage-dark py-20 md:py-28 px-4 md:px-8">
+    <section
+      ref={sectionRef}
+      className="bg-sage-dark py-20 md:py-28 px-4 md:px-8"
+    >
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-14">
           <p className="text-xs font-semibold tracking-widest uppercase text-sage-light font-inter mb-3">
@@ -27,7 +62,8 @@ export default function DeeperPain() {
           {questions.map((q, i) => (
             <div
               key={i}
-              className="flex items-start gap-4 bg-white/10 backdrop-blur-sm rounded-2xl px-7 py-5 border border-white/10"
+              ref={(el) => { cardsRef.current[i] = el; }}
+              className="premium-glass-dark flex items-start gap-4 px-7 py-5"
             >
               <span className="min-w-8 h-8 rounded-full bg-gold/20 text-gold-light flex items-center justify-center text-sm font-bold font-inter mt-0.5 flex-shrink-0">
                 {i + 1}
@@ -37,7 +73,10 @@ export default function DeeperPain() {
           ))}
         </div>
 
-        <div className="mt-10 bg-white/10 rounded-2xl p-6 text-center border border-white/10">
+        {/* Closing reassurance card */}
+        <div
+          className="premium-glass-dark mt-10 p-6 text-center"
+        >
           <p className="text-gold-light font-playfair text-xl font-semibold mb-2">
             Kamu tidak sedang lemah.
           </p>
