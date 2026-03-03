@@ -74,6 +74,7 @@ const offsets = ["md:translate-y-0", "md:translate-y-8", "md:-translate-y-4", "m
 export default function Solution() {
   const containerRef = useRef<HTMLElement>(null);
   const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+  const bgBlobRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -92,17 +93,35 @@ export default function Solution() {
           },
         }
       );
+
+      // Background Blob Parallax for Deep Architectural Space
+      if (bgBlobRef.current) {
+        gsap.to(bgBlobRef.current, {
+          yPercent: 40,
+          ease: "none",
+          scrollTrigger: {
+            trigger: containerRef.current,
+            start: "top bottom",
+            end: "bottom top",
+            scrub: true,
+          }
+        });
+      }
     }, containerRef);
 
     return () => ctx.revert();
   }, []);
 
   return (
-    <section id="layanan" ref={containerRef} className="bg-cream py-20 md:py-28 px-4 md:px-8">
-      <div className="max-w-6xl mx-auto">
+    <section id="layanan" ref={containerRef} className="relative bg-cream py-32 md:py-48 px-4 md:px-8 overflow-hidden z-0">
+
+      {/* Background Dimensional Orb (Layer 0) */}
+      <div ref={bgBlobRef} className="absolute top-1/2 left-[-10%] w-[80vw] h-[80vw] -translate-y-1/2 bg-sage/10 rounded-full blur-[160px] pointer-events-none z-0" />
+
+      <div className="max-w-7xl mx-auto relative z-20">
 
         {/* Left-aligned section header — split layout (anti-center bias) */}
-        <div className="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+        <div className="mb-20 md:mb-32 flex flex-col md:flex-row md:items-end md:justify-between gap-8 md:gap-16">
           <div>
             <p className="text-xs font-semibold tracking-widest uppercase text-sage font-satoshi mb-3">
               Mengapa House of Peace
@@ -119,14 +138,14 @@ export default function Solution() {
         </div>
 
         {/* Asymmetric 2-col zigzag grid — avoids banned 3-col equal layout */}
-        <div className="grid md:grid-cols-2 gap-5">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-16">
           {usps.map((usp, i) => {
             const { Icon } = usp;
             return (
               <div
                 key={i}
                 ref={(el) => { cardsRef.current[i] = el; }}
-                className={`premium-glass-card p-8 relative ${offsets[i]}`}
+                className={`premium-glass-card shadow-[inset_0_1px_0_rgba(255,255,255,0.7),0_15px_40px_rgba(125,144,126,0.12)] border border-white/40 p-8 md:p-12 relative ${offsets[i]} rounded-3xl backdrop-blur-xl`}
               >
                 {usp.badge && (
                   <span className="absolute top-5 right-5 bg-gold text-charcoal text-xs font-bold px-3 py-1 rounded-full font-satoshi">
