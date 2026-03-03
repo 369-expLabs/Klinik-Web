@@ -1,3 +1,6 @@
+"use client";
+import { UserCircle } from "@phosphor-icons/react";
+
 const mediaLogos = [
   "Detikcom", "TV One", "Pertamina", "Kemenhub RI",
   "Kompas", "Liputan6", "RCTI", "Metro TV",
@@ -25,7 +28,7 @@ export default function Trust() {
             <div className="w-72 h-72 rounded-3xl bg-charcoal-soft border border-sage/20 flex items-center justify-center">
               <div className="text-center p-6">
                 <div className="w-20 h-20 rounded-full bg-sage/20 mx-auto mb-3 flex items-center justify-center">
-                  <span className="text-3xl">👩‍⚕️</span>
+                  <UserCircle size={48} weight="thin" className="text-sage-light" />
                 </div>
                 <p className="text-sage-light text-xs font-inter">
                   Foto Dr. Yuliana<br />
