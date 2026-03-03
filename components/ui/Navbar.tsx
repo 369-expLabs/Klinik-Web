@@ -13,52 +13,38 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   return (
     <>
-      <nav className="fixed top-4 md:top-6 left-0 right-0 z-50 flex justify-center px-4 w-full">
-        {/* Floating Liquid Glass Pill */}
-        <div
-          className={`premium-glass-card w-full max-w-5xl rounded-full px-6 transition-all duration-500 flex items-center justify-between ${scrolled ? "py-4 shadow-xl bg-white/70" : "py-5 shadow-sm bg-white/40"
-            }`}
-        >
-          {/* Logo */}
-          <div className="flex flex-col leading-none">
-            <span className="font-playfair text-xl md:text-2xl font-bold text-charcoal tracking-tight">
-              House of Peace
-            </span>
-            <span className="text-[10px] text-taupe tracking-widest uppercase font-satoshi hidden sm:block mt-1">
-              Hypnotherapy & Wellness
-            </span>
+      {/* Transformasi menjadi Floating Pill saat di-scroll */}
+      <nav className={`fixed left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-[95%] max-w-7xl
+        ${scrolled ? "top-4" : "top-6"}`}>
+
+        <div className={`flex items-center justify-between px-6 md:px-8 py-4 transition-all duration-500
+          ${scrolled
+            ? "premium-glass-card shadow-lg py-3 rounded-full"
+            : "bg-transparent border-transparent"}`}>
+
+          {/* Logo - Anti Slop Typography */}
+          <div className="flex flex-col">
+            <span className="font-playfair text-xl font-bold text-charcoal tracking-tighter leading-none mb-0.5">House of Peace</span>
+            <span className="text-[9px] uppercase tracking-[0.3em] text-taupe font-bold leading-none">Clinical Hypnotherapy</span>
           </div>
 
-          {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-8">
-            <a href="#layanan" className="text-sm text-charcoal-soft hover:text-charcoal transition-colors font-satoshi font-medium">
-              Layanan
-            </a>
-            <a href="#proses" className="text-sm text-charcoal-soft hover:text-charcoal transition-colors font-satoshi font-medium">
-              Proses
-            </a>
-            <a href="#testimoni" className="text-sm text-charcoal-soft hover:text-charcoal transition-colors font-satoshi font-medium">
-              Testimoni
-            </a>
-            <a href="#faq" className="text-sm text-charcoal-soft hover:text-charcoal transition-colors font-satoshi font-medium">
-              FAQ
-            </a>
-
-            {/* High-Agency CTA with Tactile Feedback */}
-            <a
-              href={WA_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-forest text-cream text-sm font-semibold px-7 py-3 rounded-full hover:bg-forest-light transition-all active:scale-[0.98] font-satoshi shadow-md"
-            >
-              Booking Sekarang
+          {/* Desktop Links - Spacing mathematically perfect */}
+          <div className="hidden md:flex items-center gap-10">
+            {["Layanan", "Proses", "Testimoni"].map((item) => (
+              <a key={item} href={`#${item.toLowerCase()}`}
+                className="text-[11px] uppercase tracking-widest font-bold text-charcoal/60 hover:text-charcoal transition-colors font-satoshi">
+                {item}
+              </a>
+            ))}
+            <a href={WA_URL} target="_blank" rel="noopener noreferrer" className="bg-charcoal text-cream text-[11px] uppercase tracking-widest font-bold px-8 py-3 rounded-full active:scale-[0.95] transition-transform font-satoshi shadow-md hover:bg-charcoal-light">
+              Booking
             </a>
           </div>
 
@@ -90,7 +76,7 @@ export default function Navbar() {
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-forest text-cream text-base font-semibold px-6 py-4 rounded-full text-center font-satoshi mt-3 active:scale-[0.98] transition-all shadow-md"
+            className="bg-charcoal text-cream text-base font-semibold px-6 py-4 rounded-full text-center font-satoshi mt-3 active:scale-[0.95] transition-transform shadow-md"
             onClick={() => setOpen(false)}
           >
             Booking Sekarang
