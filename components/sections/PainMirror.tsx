@@ -76,7 +76,7 @@ export default function PainMirror() {
         {/* Anti-Center Bias: Split Screen Header Layout (Skill §3) */}
         <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="max-w-xl">
-            <p className="text-xs font-semibold tracking-widest uppercase text-sage font-outfit mb-4">
+            <p className="text-xs font-semibold tracking-widest uppercase text-sage font-satoshi mb-4">
               Apakah Ini Terasa Familiar?
             </p>
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-charcoal leading-tight">
@@ -85,7 +85,7 @@ export default function PainMirror() {
             </h2>
           </div>
           <div className="max-w-md md:text-right">
-            <p className="text-taupe font-outfit text-base leading-relaxed">
+            <p className="text-taupe font-satoshi text-base leading-relaxed">
               Kamu tidak sendirian. Jutaan orang merasakan hal yang sama — dan
               banyak dari mereka sudah menemukan jalan keluarnya.
             </p>
@@ -109,7 +109,7 @@ export default function PainMirror() {
                 <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
                   {item.title}
                 </h3>
-                <p className="text-base text-taupe font-outfit leading-relaxed max-w-[65ch]">
+                <p className="text-base text-taupe font-satoshi leading-relaxed max-w-[65ch]">
                   {item.desc}
                 </p>
               </div>
@@ -118,7 +118,7 @@ export default function PainMirror() {
         </div>
 
         <div className="mt-24 md:mt-32 pt-10 border-t border-charcoal-soft/10 text-center">
-          <p className="text-taupe font-outfit text-sm italic tracking-wide">
+          <p className="text-taupe font-satoshi text-sm italic tracking-wide">
             Jika kamu mengangguk membaca salah satu di atas — ini bukan
             kebetulan. Kamu berada di tempat yang tepat.
           </p>

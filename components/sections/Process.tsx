@@ -59,14 +59,14 @@ export default function Process() {
     <section id="proses" ref={containerRef} className="bg-cream-dark py-20 md:py-28 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
-          <p className="text-xs font-semibold tracking-widest uppercase text-sage font-outfit mb-3">
+          <p className="text-xs font-semibold tracking-widest uppercase text-sage font-satoshi mb-3">
             Prosesnya Transparan
           </p>
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-charcoal mb-4">
             Sederhana, Sadar, dan{" "}
             <span className="italic text-sage-dark">Menenangkan</span>
           </h2>
-          <p className="text-taupe font-outfit max-w-xl mx-auto text-base leading-relaxed">
+          <p className="text-taupe font-satoshi max-w-xl mx-auto text-base leading-relaxed">
             Tidak ada yang misterius. Kamu tidak akan pingsan, tidak akan
             kehilangan kesadaran, dan tidak bisa dipaksa melakukan apa pun
             yang tidak kamu inginkan.
@@ -87,10 +87,10 @@ export default function Process() {
               <h3 className="font-playfair text-lg font-semibold text-charcoal mb-1">
                 {step.title}
               </h3>
-              <p className="text-xs text-sage font-outfit font-semibold mb-4 uppercase tracking-wide">
+              <p className="text-xs text-sage font-satoshi font-semibold mb-4 uppercase tracking-wide">
                 {step.duration}
               </p>
-              <p className="text-sm text-taupe font-outfit leading-relaxed">{step.desc}</p>
+              <p className="text-sm text-taupe font-satoshi leading-relaxed">{step.desc}</p>
               {i < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-1/2 -right-3 text-sage-light text-xl z-10 transition-transform hover:translate-x-1">
                   →
@@ -106,13 +106,13 @@ export default function Process() {
             <PersonSimpleTaiChi size={36} weight="fill" className="text-sage-light" />
           </div>
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-sage-light font-outfit mb-2">
+            <p className="text-xs font-semibold tracking-widest uppercase text-sage-light font-satoshi mb-2">
               Exclusive After-Care
             </p>
             <h3 className="font-playfair text-2xl font-bold text-cream mb-3">
               Komunitas Meditasi HOPE
             </h3>
-            <p className="text-sage-light font-outfit text-sm leading-relaxed">
+            <p className="text-sage-light font-satoshi text-sm leading-relaxed">
               Setelah sesi selesai, perjalananmu tidak berakhir. Kamu
               bergabung ke komunitas meditasi mingguan bersama pasien HOPE
               lainnya — dipandu oleh tim kami untuk menjaga stabilitas emosi

@@ -104,7 +104,7 @@ export default function Solution() {
         {/* Left-aligned section header — split layout (anti-center bias) */}
         <div className="mb-14 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-sage font-outfit mb-3">
+            <p className="text-xs font-semibold tracking-widest uppercase text-sage font-satoshi mb-3">
               Mengapa House of Peace
             </p>
             <h2 className="font-playfair text-3xl md:text-5xl font-bold text-charcoal leading-tight max-w-lg">
@@ -112,7 +112,7 @@ export default function Solution() {
               <span className="italic text-sage-dark">Tuntas dari Akar</span>
             </h2>
           </div>
-          <p className="text-taupe font-outfit max-w-xs text-sm leading-relaxed md:text-right">
+          <p className="text-taupe font-satoshi max-w-xs text-sm leading-relaxed md:text-right">
             6 keunggulan yang membuat pendekatan kami berbeda dari semua
             solusi yang pernah kamu coba sebelumnya.
           </p>
@@ -129,7 +129,7 @@ export default function Solution() {
                 className={`premium-glass-card p-8 relative ${offsets[i]}`}
               >
                 {usp.badge && (
-                  <span className="absolute top-5 right-5 bg-gold text-charcoal text-xs font-bold px-3 py-1 rounded-full font-outfit">
+                  <span className="absolute top-5 right-5 bg-gold text-charcoal text-xs font-bold px-3 py-1 rounded-full font-satoshi">
                     {usp.badge}
                   </span>
                 )}
@@ -137,7 +137,7 @@ export default function Solution() {
                 <h3 className="font-playfair text-xl font-semibold text-charcoal mb-3">
                   {usp.title}
                 </h3>
-                <p className="text-sm text-taupe font-outfit leading-relaxed">{usp.desc}</p>
+                <p className="text-sm text-taupe font-satoshi leading-relaxed">{usp.desc}</p>
               </div>
             );
           })}

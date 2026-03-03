@@ -84,11 +84,11 @@ export default function Hero() {
           >
             {/* Social proof bar */}
             <motion.div variants={itemVariants} className="inline-flex items-center gap-3 bg-cream-dark border border-cream-dark rounded-full px-4 py-2 mb-8">
-              <span className="text-xs font-semibold text-sage-dark tracking-wide font-geist uppercase">
+              <span className="text-xs font-semibold text-sage-dark tracking-wide font-satoshi uppercase">
                 5.000+ Pasien Telah Pulih
               </span>
               <span className="text-taupe-light">·</span>
-              <span className="text-xs text-taupe font-geist">Dipercaya Dokter & Psikolog</span>
+              <span className="text-xs text-taupe font-satoshi">Dipercaya Dokter & Psikolog</span>
             </motion.div>
 
             {/* Premium Typography: tracking-tighter, leading-[0.9] */}
@@ -104,7 +104,7 @@ export default function Hero() {
             {/* Max paragraph width capped at 65ch */}
             <motion.p
               variants={itemVariants}
-              className="text-base md:text-lg text-taupe font-geist leading-relaxed mb-10 max-w-[65ch]"
+              className="text-base md:text-lg text-taupe font-satoshi leading-relaxed mb-10 max-w-[65ch]"
             >
               Selesaikan masalah mental & perilaku langsung ke akarnya.{" "}
               <strong className="text-charcoal font-medium">Cepat, permanen, 100% tanpa obat.</strong>{" "}
@@ -119,7 +119,7 @@ export default function Hero() {
                 href={WA_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-forest text-cream font-medium px-8 py-4 rounded-full transition-colors duration-300 font-geist text-sm shadow-md hover:shadow-glow"
+                className="inline-flex items-center justify-center gap-2 bg-forest text-cream font-medium px-8 py-4 rounded-full transition-colors duration-300 font-satoshi text-sm shadow-md hover:shadow-glow"
               >
                 <WhatsappLogo size={20} weight="regular" />
                 Konsultasikan Masalah Saya
@@ -128,7 +128,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 href="#proses"
-                className="inline-flex items-center justify-center gap-2 border border-sage text-charcoal font-medium px-8 py-4 rounded-full transition-colors duration-200 hover:bg-sage/10 font-geist text-sm"
+                className="inline-flex items-center justify-center gap-2 border border-sage text-charcoal font-medium px-8 py-4 rounded-full transition-colors duration-200 hover:bg-sage/10 font-satoshi text-sm"
               >
                 Pelajari Prosesnya <ArrowRight size={18} weight="regular" />
               </motion.a>
@@ -143,7 +143,7 @@ export default function Hero() {
               ].map((badge) => (
                 <div key={badge} className="flex items-center gap-2">
                   <span className="w-4 h-4 rounded-full bg-sage-dark flex items-center justify-center text-white text-[10px]">✓</span>
-                  <span className="text-xs text-taupe font-geist font-medium">{badge}</span>
+                  <span className="text-xs text-taupe font-satoshi font-medium">{badge}</span>
                 </div>
               ))}
             </motion.div>
@@ -172,7 +172,7 @@ export default function Hero() {
               className="premium-glass-card absolute bottom-12 -left-8 md:-left-12 px-6 py-5 z-30 shadow-2xl rounded-2xl"
             >
               <p className="text-3xl font-bold font-playfair text-charcoal leading-none mb-1">90%</p>
-              <p className="text-xs text-taupe font-geist">Merasakan perubahan<br />sejak sesi pertama</p>
+              <p className="text-xs text-taupe font-satoshi">Merasakan perubahan<br />sejak sesi pertama</p>
             </div>
 
             {/* Liquid Glass Badge 2 — Dark Refraction */}
@@ -181,7 +181,7 @@ export default function Hero() {
               className="premium-glass-dark absolute top-12 right-12 px-6 py-5 z-30 shadow-2xl rounded-2xl"
             >
               <p className="text-3xl font-bold font-playfair text-cream leading-none mb-1">5.000+</p>
-              <p className="text-xs text-sage-light font-geist">Pasien telah pulih</p>
+              <p className="text-xs text-sage-light font-satoshi">Pasien telah pulih</p>
             </div>
           </motion.div>
 

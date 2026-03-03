@@ -32,30 +32,30 @@ export default function Navbar() {
           <span className="font-playfair text-xl font-bold text-charcoal">
             House of Peace
           </span>
-          <span className="text-xs text-taupe tracking-widest uppercase font-inter">
+          <span className="text-xs text-taupe tracking-widest uppercase font-satoshi">
             Hypnotherapy & Wellness
           </span>
         </div>
 
         {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
-          <a href="#layanan" className="text-sm text-charcoal-soft hover:text-charcoal transition-colors font-inter">
+          <a href="#layanan" className="text-sm text-charcoal-soft hover:text-charcoal transition-colors font-satoshi">
             Layanan
           </a>
-          <a href="#proses" className="text-sm text-charcoal-soft hover:text-charcoal transition-colors font-inter">
+          <a href="#proses" className="text-sm text-charcoal-soft hover:text-charcoal transition-colors font-satoshi">
             Proses
           </a>
-          <a href="#testimoni" className="text-sm text-charcoal-soft hover:text-charcoal transition-colors font-inter">
+          <a href="#testimoni" className="text-sm text-charcoal-soft hover:text-charcoal transition-colors font-satoshi">
             Testimoni
           </a>
-          <a href="#faq" className="text-sm text-charcoal-soft hover:text-charcoal transition-colors font-inter">
+          <a href="#faq" className="text-sm text-charcoal-soft hover:text-charcoal transition-colors font-satoshi">
             FAQ
           </a>
           <a
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gold text-charcoal text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-gold-light transition-colors font-inter"
+            className="bg-gold text-charcoal text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-gold-light transition-colors font-satoshi"
           >
             Booking Sekarang
           </a>
@@ -79,7 +79,7 @@ export default function Navbar() {
               key={href}
               href={href}
               onClick={() => setOpen(false)}
-              className="text-sm text-charcoal-soft font-inter capitalize"
+              className="text-sm text-charcoal-soft font-satoshi capitalize"
             >
               {href.replace("#", "").charAt(0).toUpperCase() + href.slice(2)}
             </a>
@@ -88,7 +88,7 @@ export default function Navbar() {
             href={WA_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gold text-charcoal text-sm font-semibold px-6 py-3 rounded-full text-center font-inter mt-2"
+            className="bg-gold text-charcoal text-sm font-semibold px-6 py-3 rounded-full text-center font-satoshi mt-2"
           >
             Booking Sekarang
           </a>

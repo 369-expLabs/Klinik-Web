@@ -27,14 +27,14 @@ export default function FAQ() {
     <section id="faq" className="bg-cream-dark py-20 md:py-28 px-4 md:px-8">
       <div className="max-w-3xl mx-auto">
         <div className="text-center mb-14">
-          <p className="text-xs font-semibold tracking-widest uppercase text-sage font-inter mb-3">
+          <p className="text-xs font-semibold tracking-widest uppercase text-sage font-satoshi mb-3">
             Pertanyaan Umum
           </p>
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-charcoal mb-4">
             Sebelum Kamu{" "}
             <span className="italic text-sage-dark">Memutuskan</span>
           </h2>
-          <p className="text-taupe font-inter text-base leading-relaxed">
+          <p className="text-taupe font-satoshi text-base leading-relaxed">
             Pertanyaan-pertanyaan ini wajar dan sering ditanyakan. Kami
             menjawabnya dengan jujur.
           </p>
@@ -50,16 +50,16 @@ export default function FAQ() {
                 className="w-full text-left px-7 py-5 flex items-start justify-between gap-4 hover:bg-cream-dark/50 transition-colors"
                 onClick={() => setOpen(open === i ? null : i)}
               >
-                <span className="font-inter text-sm font-semibold text-charcoal leading-relaxed pr-4">
+                <span className="font-satoshi text-sm font-semibold text-charcoal leading-relaxed pr-4">
                   {faq.q}
                 </span>
-                <span className="text-sage-dark text-xl flex-shrink-0 mt-0.5 font-inter">
+                <span className="text-sage-dark text-xl flex-shrink-0 mt-0.5 font-satoshi">
                   {open === i ? "−" : "+"}
                 </span>
               </button>
               {open === i && (
                 <div className="px-7 pb-6">
-                  <p className="text-sm text-taupe font-inter leading-relaxed">
+                  <p className="text-sm text-taupe font-satoshi leading-relaxed">
                     {faq.a}
                   </p>
                 </div>
@@ -69,7 +69,7 @@ export default function FAQ() {
         </div>
 
         <div className="mt-10 text-center">
-          <p className="text-taupe font-inter text-sm">
+          <p className="text-taupe font-satoshi text-sm">
             Masih ada pertanyaan lain?{" "}
             <a
               href={`https://wa.me/6281234567890?text=${encodeURIComponent("Halo, saya ingin bertanya sebelum booking terapi.")}`}

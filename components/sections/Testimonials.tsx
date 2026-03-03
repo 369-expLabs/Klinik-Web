@@ -30,14 +30,14 @@ export default function Testimonials() {
     <section id="testimoni" className="bg-cream py-20 md:py-28 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
-          <p className="text-xs font-semibold tracking-widest uppercase text-sage font-inter mb-3">
+          <p className="text-xs font-semibold tracking-widest uppercase text-sage font-satoshi mb-3">
             Mereka Sudah Merasakannya
           </p>
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-charcoal mb-4">
             Hidup Mereka{" "}
             <span className="italic text-sage-dark">Sudah Berubah</span>
           </h2>
-          <p className="text-taupe font-inter max-w-xl mx-auto text-base leading-relaxed">
+          <p className="text-taupe font-satoshi max-w-xl mx-auto text-base leading-relaxed">
             Semua testimoni ditulis oleh pasien nyata. Identitas dijaga
             kerahasiaannya sesuai kode etik medis.
           </p>
@@ -50,16 +50,16 @@ export default function Testimonials() {
               className="bg-cream-dark rounded-2xl p-7 border border-cream-dark flex flex-col"
             >
               <div className="text-3xl text-sage/30 font-playfair mb-4 leading-none">"</div>
-              <p className="text-sm text-charcoal-soft font-inter leading-relaxed italic flex-1 mb-6">
+              <p className="text-sm text-charcoal-soft font-satoshi leading-relaxed italic flex-1 mb-6">
                 {t.quote}
               </p>
               <div className="border-t border-cream-dark pt-5">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="text-sm font-semibold text-charcoal font-inter">{t.initial}</p>
-                    <p className="text-xs text-taupe font-inter">{t.age} · {t.problem}</p>
+                    <p className="text-sm font-semibold text-charcoal font-satoshi">{t.initial}</p>
+                    <p className="text-xs text-taupe font-satoshi">{t.age} · {t.problem}</p>
                   </div>
-                  <span className="bg-sage/10 text-sage-dark text-xs font-semibold px-3 py-1 rounded-full font-inter">
+                  <span className="bg-sage/10 text-sage-dark text-xs font-semibold px-3 py-1 rounded-full font-satoshi">
                     {t.sessions}
                   </span>
                 </div>
@@ -69,7 +69,7 @@ export default function Testimonials() {
         </div>
 
         <div className="mt-10 text-center">
-          <p className="text-taupe font-inter text-sm">
+          <p className="text-taupe font-satoshi text-sm">
             5.000+ pasien lainnya memiliki cerita serupa. Giliran kamu.
           </p>
         </div>

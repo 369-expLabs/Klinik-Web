@@ -22,7 +22,7 @@ export default function ComparisonTable() {
 
             <div className="max-w-6xl mx-auto relative z-10">
                 <div className="text-center mb-16">
-                    <p className="text-xs font-semibold tracking-widest uppercase text-sage font-inter mb-3">
+                    <p className="text-xs font-semibold tracking-widest uppercase text-sage font-satoshi mb-3">
                         Pilihan Ada di Tanganmu
                     </p>
                     <h2 className="font-playfair text-3xl md:text-5xl font-bold text-cream mb-4">
@@ -39,7 +39,7 @@ export default function ComparisonTable() {
                         <h3 className="font-playfair text-2xl text-sage mb-8">Cara Lama</h3>
                         <ul className="space-y-6">
                             {oldWay.map((item, i) => (
-                                <li key={i} className="text-taupe-light font-inter text-sm md:text-base">
+                                <li key={i} className="text-taupe-light font-satoshi text-sm md:text-base">
                                     {item}
                                 </li>
                             ))}
@@ -55,7 +55,7 @@ export default function ComparisonTable() {
                             <h3 className="font-playfair text-2xl text-gold-light mb-8">Bersama House of Peace</h3>
                             <ul className="space-y-6">
                                 {hopeWay.map((item, i) => (
-                                    <li key={i} className="flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-4 text-cream font-inter text-sm md:text-base font-medium">
+                                    <li key={i} className="flex flex-col md:flex-row items-center md:items-start gap-3 md:gap-4 text-cream font-satoshi text-sm md:text-base font-medium">
                                         <span className="text-forest-light bg-gold-light/20 p-1 rounded-full text-xs flex-shrink-0 mt-1">✓</span>
                                         <span className="text-center md:text-left">{item}</span>
                                     </li>
