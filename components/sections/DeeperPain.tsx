@@ -6,7 +6,6 @@ import {
   HeartBreak,
   Users,
   MaskHappy,
-  ArrowsClockwise
 } from "@phosphor-icons/react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -14,27 +13,24 @@ gsap.registerPlugin(ScrollTrigger);
 const bentoItems = [
   {
     Icon: HeartBreak,
+    step: "01",
     title: "Ketakutan Tanpa Alasan",
-    desc: "Pernah tiba-tiba takut sesuatu yang buruk akan terjadi, padahal tidak ada alasan logis sama sekali? Jantung berdebar dan pikiran skenario terburuk mengambil alih.",
-    colSpan: "md:col-span-8", // 70% width
+    desc: "Tiba-tiba takut sesuatu yang buruk akan terjadi, padahal tidak ada alasan logis. Jantung berdebar, pikiran skenario terburuk mengambil alih.",
+    colSpan: "md:col-span-2",
   },
   {
     Icon: Users,
+    step: "02",
     title: "Kesepian di Keramaian",
     desc: "Merasa sendirian meski dikelilingi banyak orang — bahkan oleh orang-orang yang paling kamu cintai.",
-    colSpan: "md:col-span-4", // 30% width
+    colSpan: "md:col-span-1",
   },
   {
     Icon: MaskHappy,
-    title: "Lelah Berpura-pura",
-    desc: "Tersenyum di luar, tapi hancur di dalam. Menghabiskan energi luar biasa setiap hari hanya untuk terlihat 'baik-baik saja' di depan dunia.",
-    colSpan: "md:col-span-5", // 40% width
-  },
-  {
-    Icon: ArrowsClockwise,
-    title: "Siklus Luka Berulang",
-    desc: "Sudah mencoba memaafkan, sudah mencoba melupakan. Tapi rasa sakit itu selalu kembali di saat yang tidak terduga, seolah luka itu tidak pernah benar-benar selesai.",
-    colSpan: "md:col-span-7", // 60% width
+    step: "03",
+    title: "Lelah Berpura-pura Baik-baik Saja",
+    desc: "Tersenyum di luar, tapi hancur di dalam. Menghabiskan energi luar biasa setiap hari hanya untuk terlihat kuat di depan dunia.",
+    colSpan: "md:col-span-3",
   },
 ];
 
@@ -105,8 +101,8 @@ export default function DeeperPain() {
           </p>
         </div>
 
-        {/* Asymmetric Bento Architecture (Variance 8) */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 lg:gap-8">
+        {/* Asymmetric Bento 2.0 Architecture (Variance 8): col-span-2 / col-span-1 / col-span-3 */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
           {bentoItems.map((item, i) => {
             const { Icon } = item;
             return (
@@ -129,6 +125,9 @@ export default function DeeperPain() {
 
                 {/* Typography block placed outside container for gallery aesthetic */}
                 <div className="px-4">
+                  <span className="font-mono text-xs text-sage-light/60 tracking-widest mb-3 block">
+                    {item.step}
+                  </span>
                   <h3 className="font-playfair text-2xl md:text-3xl font-bold text-cream mb-4">
                     {item.title}
                   </h3>
