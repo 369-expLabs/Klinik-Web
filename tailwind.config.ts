@@ -37,8 +37,9 @@ const config: Config = {
       },
       fontFamily: {
         playfair: ["Playfair Display", "serif"],
-        outfit: ["Outfit", "sans-serif"],
-        inter: ["Outfit", "sans-serif"], // aliased to Outfit — backward compat
+        geist: ["Geist", "sans-serif"],
+        outfit: ["Geist", "sans-serif"], // aliased backward compat
+        inter: ["Geist", "sans-serif"],  // aliased backward compat
       },
       boxShadow: {
         'glow': '0 0 20px rgba(33, 67, 38, 0.4)',
