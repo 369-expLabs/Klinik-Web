@@ -17,12 +17,12 @@ const included = [
 
 export default function Booking() {
   return (
-    <section id="booking" className="bg-charcoal relative py-20 md:py-28 px-4 md:px-8 overflow-hidden border-t border-white/5">
+    <section id="booking" className="bg-charcoal relative py-32 md:py-48 px-4 md:px-8 overflow-hidden">
       {/* Soft sage green gradient aura for the Ethereal Glassmorphism background */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-sage/20 blur-[150px] rounded-full pointer-events-none" />
 
-      <div className="max-w-5xl mx-auto relative z-10">
-        <div className="text-center mb-16">
+      <div className="max-w-6xl mx-auto relative z-10">
+        <div className="text-center mb-20 md:mb-24">
           <p className="text-xs font-semibold tracking-widest uppercase text-sage font-satoshi mb-3">
             Mulai Dari Sini
           </p>
@@ -32,9 +32,9 @@ export default function Booking() {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-5 gap-8 items-stretch">
+        <div className="grid lg:grid-cols-5 gap-8 lg:gap-16 items-stretch">
           {/* Primary High-Impact Card (Glassmorphism) */}
-          <div className="lg:col-span-3 premium-glass-dark p-8 md:p-12 relative overflow-hidden flex flex-col justify-between">
+          <div className="lg:col-span-3 premium-glass-dark p-8 md:p-16 relative overflow-hidden flex flex-col justify-between">
             {/* Inner subtle glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent pointer-events-none" />
 
@@ -49,17 +49,17 @@ export default function Booking() {
                 </span>
                 <span className="text-sage-light font-satoshi text-base">/ sesi</span>
               </div>
-              <p className="text-taupe-light font-satoshi text-sm mb-10">
+              <p className="text-taupe-light font-satoshi text-sm md:text-base leading-relaxed mb-12 max-w-[45ch]">
                 Biaya bervariasi sesuai kompleksitas kasus. Konsultasi awal untuk menentukan estimasi sesi yang dibutuhkan.
               </p>
 
-              <div className="space-y-4 mb-10">
+              <div className="grid gap-6 mb-16">
                 {included.map((item, i) => (
                   <div key={i} className="flex items-start gap-4">
                     <div className="bg-sage/20 rounded-full p-1 mt-0.5 flex-shrink-0 text-sage-light">
                       <Check size={14} weight="bold" />
                     </div>
-                    <span className="text-sm text-white font-satoshi leading-relaxed">{item}</span>
+                    <span className="text-sm md:text-base text-white/90 font-satoshi leading-relaxed max-w-[45ch]">{item}</span>
                   </div>
                 ))}
               </div>
@@ -80,8 +80,8 @@ export default function Booking() {
           <div className="lg:col-span-2 flex flex-col gap-6">
 
             {/* Operational Data */}
-            <div className="bg-charcoal border border-white/5 rounded-3xl p-8 space-y-8 flex-1 relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-forest/20 rounded-full blur-3xl pointer-events-none" />
+            <div className="bg-charcoal/50 border border-white/5 rounded-3xl p-8 md:p-12 space-y-10 flex-1 relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-48 h-48 bg-forest/20 rounded-full blur-[80px] pointer-events-none" />
               <div className="relative z-10">
                 <p className="text-xs font-semibold tracking-widest uppercase text-sage font-satoshi mb-4">
                   Lokasi Klinik
@@ -93,7 +93,7 @@ export default function Booking() {
                 </p>
               </div>
 
-              <div className="h-px w-full bg-white/5 relative z-10" />
+              <div className="h-px w-full bg-transparent relative z-10" />
 
               <div className="relative z-10">
                 <p className="text-xs font-semibold tracking-widest uppercase text-sage font-satoshi mb-4">
@@ -117,11 +117,11 @@ export default function Booking() {
             </div>
 
             {/* Uncertainty Box */}
-            <div className="bg-sage/10 border border-sage/20 rounded-3xl p-8 backdrop-blur-sm">
+            <div className="bg-sage/5 border border-sage/10 rounded-3xl p-8 md:p-12 backdrop-blur-sm">
               <h3 className="font-playfair text-xl font-semibold text-cream mb-3">
                 Tidak yakin apakah ini tepat untukmu?
               </h3>
-              <p className="text-sage-light font-satoshi text-sm leading-relaxed mb-6">
+              <p className="text-taupe-light font-satoshi text-sm md:text-base leading-relaxed mb-8 max-w-[45ch]">
                 Silakan konsultasikan terlebih dahulu via WhatsApp &mdash; gratis dan tanpa komitmen sama sekali. Kami bantu untuk menemukan jalan yang tepat.
               </p>
               <a
