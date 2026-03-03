@@ -41,7 +41,7 @@ export default function DeeperPain() {
   return (
     <section
       ref={sectionRef}
-      className="bg-sage-dark py-20 md:py-28 px-4 md:px-8"
+      className="py-20 md:py-28 px-4 md:px-8"
     >
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-14">

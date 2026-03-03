@@ -56,7 +56,7 @@ export default function PainMirror() {
   }, []);
 
   return (
-    <section ref={containerRef} className="bg-cream-dark py-20 md:py-28 px-4 md:px-8">
+    <section ref={containerRef} className="py-20 md:py-28 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
           <p className="text-xs font-semibold tracking-widest uppercase text-sage font-inter mb-3">
@@ -77,7 +77,7 @@ export default function PainMirror() {
             <div
               key={i}
               ref={(el) => { cardsRef.current[i] = el; }}
-              className={`bg-cream rounded-2xl p-7 border border-cream-dark hover:shadow-md transition-shadow duration-200 group ${i % 2 === 0 ? "md:translate-y-10" : ""
+              className={`premium-glass-card p-7 relative ${i % 2 === 0 ? "md:translate-y-10" : ""
                 }`}
             >
               <div className="text-3xl mb-4">{item.icon}</div>

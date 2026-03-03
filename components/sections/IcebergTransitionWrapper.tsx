@@ -12,7 +12,7 @@ export default function IcebergTransitionWrapper({ children }: { children: React
 
     useEffect(() => {
         const ctx = gsap.context(() => {
-            // Background color morph: Cream → Sage Green as user scrolls through this section
+            // Background color morph: Cream → Sage Green
             gsap.to(containerRef.current, {
                 backgroundColor: "#7D907E",
                 ease: "none",
@@ -27,15 +27,15 @@ export default function IcebergTransitionWrapper({ children }: { children: React
             // Iceberg parallax: drifts upward ("diving" sensation) as user scrolls
             gsap.fromTo(
                 icebergRef.current,
-                { y: 0 },
+                { y: 60 },
                 {
-                    y: -150,
+                    y: -100,
                     ease: "none",
                     scrollTrigger: {
                         trigger: containerRef.current,
                         start: "top bottom",
                         end: "bottom top",
-                        scrub: 1.5,
+                        scrub: 2,
                     },
                 }
             );
@@ -47,29 +47,28 @@ export default function IcebergTransitionWrapper({ children }: { children: React
     return (
         <div
             ref={containerRef}
-            className="relative overflow-hidden"
+            className="relative"
             style={{ backgroundColor: "#F9F7F2" }}
         >
-            {/* Iceberg illustration — midground layer, parallaxed upward on scroll */}
+            {/* Iceberg illustration — absolute, centered, midground layer */}
             <div
                 ref={icebergRef}
-                className="pointer-events-none absolute inset-x-0 bottom-0 flex justify-center"
+                className="absolute inset-x-0 top-1/4 pointer-events-none flex justify-center"
                 style={{ zIndex: "var(--z-layer-midground)" }}
             >
-                <div className="relative w-full max-w-4xl px-4">
-                    <Image
-                        src="/illustrations/iceberg.png"
-                        alt="Iceberg illustration — conscious tip above, vast subconscious root system below"
-                        width={1024}
-                        height={480}
-                        className="w-full h-auto object-contain opacity-25 md:opacity-35 select-none"
-                        priority={false}
-                    />
-                </div>
+                <Image
+                    src="/illustrations/iceberg.png"
+                    alt="Iceberg — conscious tip above, vast subconscious root system below"
+                    width={1200}
+                    height={560}
+                    className="w-full max-w-5xl h-auto object-contain"
+                    style={{ opacity: 0.18 }}
+                    priority={false}
+                />
             </div>
 
-            {/* Foreground: PainMirror + DeeperPain sections */}
-            <div style={{ position: "relative", zIndex: "var(--z-layer-foreground)" }}>
+            {/* Foreground content — children must have transparent backgrounds */}
+            <div className="relative" style={{ zIndex: "var(--z-layer-foreground)" }}>
                 {children}
             </div>
         </div>
