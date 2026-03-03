@@ -49,10 +49,10 @@ export default function Hero() {
               </span>
             </div>
 
-            {/* Rule: tracking-tighter & leading-none untuk Premium Look */}
+            {/* Rule: tracking-tighter and leading-none untuk Premium Look */}
             <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold text-charcoal tracking-tighter leading-[0.95] mb-8 text-balance">
               Bebaskan Diri dari <br />
-              <span className="text-sage-dark italic font-normal">Trauma & Emosi</span>
+              <span className="text-sage-dark italic font-normal">Trauma and Emosi</span>
             </h1>
 
             {/* Rule: max-w-[65ch] untuk readability */}
@@ -73,7 +73,7 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right: Asymmetric Asset & Liquid Glass */}
+          {/* Right: Asymmetric Asset and Liquid Glass */}
           <div className={`relative transition-all duration-1000 delay-300 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"}`}>
             <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl rotate-[-2deg] hover:rotate-0 transition-transform duration-700">
               <Image src="/illustrations/hero.jpg" alt="Healing" width={800} height={1000} className="w-full object-cover aspect-[4/5]" priority />

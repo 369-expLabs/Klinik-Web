@@ -1,6 +1,6 @@
 # House of Peace — Landing Page
 
-Next.js 14 + Tailwind CSS landing page for House of Peace Hypnotherapy & Wellness Center.
+Next.js 14 + Tailwind CSS landing page for House of Peace Hypnotherapy and Wellness Center.
 
 ## Quick Start
 

@@ -22,13 +22,13 @@
 
     /* Global Z-Index Map for Scrollytelling Architecture */
     --z-layer-background: 0;
-    /* Layer 0: Background color transitions & abstracts */
+    /* Layer 0: Background color transitions and abstracts */
     --z-layer-midground: 10;
     /* Layer 1: Placeholder containers for 2D illustrations */
     --z-layer-foreground: 20;
     /* Layer 2: Main text, grids, buttons */
     --z-layer-badges: 30;
-    /* Floating badges & parallax objects */
+    /* Floating badges and parallax objects */
     --z-layer-overlay: 50;
     /* Topmost: Grainy analog texture overlay */
   }

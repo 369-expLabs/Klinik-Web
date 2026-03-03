@@ -76,7 +76,7 @@ export default function Booking() {
             </a>
           </div>
 
-          {/* Side-Car: Operational Data & Uncertainty Box */}
+          {/* Side-Car: Operational Data and Uncertainty Box */}
           <div className="lg:col-span-2 flex flex-col gap-6">
 
             {/* Operational Data */}

@@ -15,7 +15,7 @@ export default function Footer() {
               House of Peace
             </h3>
             <p className="text-sm md:text-base text-taupe-light leading-relaxed font-satoshi max-w-[40ch]">
-              Hypnotherapy & Wellness Center<br />
+              Hypnotherapy and Wellness Center<br />
               <span className="block mt-4 text-cream font-medium">Jakarta Barat 11520</span>
               Kedoya Utara, Kebon Jeruk
             </p>
@@ -24,7 +24,7 @@ export default function Footer() {
           {/* Navigation Links */}
           <div className="flex flex-col">
             <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-sage-light mb-6 font-satoshi">
-              Layanan & Proses
+              Layanan and Proses
             </p>
             <ul className="space-y-4 text-sm text-taupe-light font-satoshi">
               <li>
@@ -51,7 +51,7 @@ export default function Footer() {
               Kontak Darurat / Booking
             </p>
             <p className="text-sm text-taupe-light font-satoshi leading-relaxed mb-6">
-              WhatsApp tim kami tersedia untuk konsultasi awal & penjadwalan. Membalas dalam 1×24 jam.
+              WhatsApp tim kami tersedia untuk konsultasi awal and penjadwalan. Membalas dalam 1×24 jam.
             </p>
             <a
               href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20tanya%20jadwal"

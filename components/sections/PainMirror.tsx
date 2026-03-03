@@ -22,12 +22,12 @@ type Problem = {
 const problems: Problem[] = [
   {
     Icon: Waves,
-    title: "Pikiran Berisik & Cemas",
+    title: "Pikiran Berisik and Cemas",
     desc: "Pikiran tidak bisa berhenti berputar. Khawatir terus-menerus tentang hal yang belum tentu terjadi. Sulit tidur karena kepala penuh.",
   },
   {
     Icon: Fire,
-    title: "Emosi Meledak & Menyesal",
+    title: "Emosi Meledak and Menyesal",
     desc: "Marah tiba-tiba tanpa alasan jelas, lalu menyesal. Merasa tidak bisa mengontrol reaksi sendiri. Orang-orang terdekat mulai menjauh.",
   },
   {
@@ -37,7 +37,7 @@ const problems: Problem[] = [
   },
   {
     Icon: MoonStars,
-    title: "Trauma & Luka Batin",
+    title: "Trauma and Luka Batin",
     desc: "Ada kejadian masa lalu yang terus membayangi. Sudah mencoba melupakannya, tapi rasanya selalu kembali di saat yang tidak terduga.",
   },
 ];

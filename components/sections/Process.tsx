@@ -30,7 +30,7 @@ const steps = [
   },
   {
     num: "04",
-    title: "Lega & Pemahaman Baru",
+    title: "Lega and Pemahaman Baru",
     duration: "30–60 menit",
     desc: "Kamu kembali ke kesadaran penuh dengan perasaan ringan, lega, dan pemahaman baru. Post-talk membantu mengintegrasikan perubahan.",
     icon: <CheckCircle size={32} weight="regular" />,

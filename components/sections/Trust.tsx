@@ -46,7 +46,7 @@ export default function Trust() {
               Dr. Yuliana, CHt®
             </h2>
             <p className="text-gold font-satoshi text-sm mb-6">
-              Medical Doctor & Clinical Hypnotherapist
+              Medical Doctor and Clinical Hypnotherapist
             </p>
 
             <p className="text-taupe-light font-satoshi text-sm leading-relaxed mb-7">
@@ -71,7 +71,7 @@ export default function Trust() {
         {/* AS SEEN ON */}
         <div className="border-t border-charcoal-soft pt-16">
           <p className="text-center text-xs font-semibold tracking-widest uppercase text-sage font-satoshi mb-10">
-            Dipercaya & Diliput Oleh
+            Dipercaya and Diliput Oleh
           </p>
           <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-10 gap-4">
             {mediaLogos.map((logo, i) => (

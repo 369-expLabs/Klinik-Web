@@ -10,7 +10,7 @@ const testimonials = [
   {
     initial: "R",
     age: "34 tahun",
-    problem: "Anxiety & insomnia kronis",
+    problem: "Anxiety and insomnia kronis",
     quote:
       "Saya tidak percaya awalnya. Tapi sejak sesi pertama, malam itu saya tidur nyenyak untuk pertama kalinya dalam 2 tahun. Sekarang sudah 6 bulan, dan saya tidak pernah kembali ke kondisi lama itu.",
     sessions: "2 sesi",
@@ -18,7 +18,7 @@ const testimonials = [
   {
     initial: "M",
     age: "28 tahun",
-    problem: "Trauma masa kecil & depresi",
+    problem: "Trauma masa kecil and depresi",
     quote:
       "Dr. Yuliana benar-benar memahami. Tidak ada yang menghakimi. Setelah sesi kedua, saya merasa seperti beban berton-ton terangkat dari dada saya. Saya akhirnya bisa memaafkan — bukan untuk orang itu, tapi untuk diri saya sendiri.",
     sessions: "3 sesi",
@@ -26,7 +26,7 @@ const testimonials = [
   {
     initial: "S",
     age: "45 tahun",
-    problem: "Anger management & hubungan rumah tangga",
+    problem: "Anger management and hubungan rumah tangga",
     quote:
       "Istri saya yang menyarankan. Saya skeptis — tapi setelah satu sesi, saya sadar ada luka lama yang belum pernah saya akui. Rumah tangga kami sekarang jauh lebih hangat. Anak-anak saya mendapat ayah yang berbeda.",
     sessions: "2 sesi",
@@ -34,7 +34,7 @@ const testimonials = [
   {
     initial: "D",
     age: "31 tahun",
-    problem: "Burnout karir & self-sabotage",
+    problem: "Burnout karir and self-sabotage",
     quote:
       "Saya hampir menghancurkan karir yang saya bangun 8 tahun. Di sini saya menemukan akar ketakutan saya pada kesuksesan. Prosesnya tenang, tidak ada paksaan. Terima kasih HOPE.",
     sessions: "4 sesi",

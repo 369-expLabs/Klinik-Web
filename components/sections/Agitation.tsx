@@ -11,7 +11,7 @@ const hope_ways = [
   "90% pasien merasakan perubahan drastis sejak sesi pertama",
   "100% tanpa obat — pulih karena kekuatan pikiranmu sendiri",
   "Komunitas meditasi mingguan seumur hidup — kamu tidak pernah sendirian",
-  "Supervisi dokter medis — diagnosa fisik & psikosomatis terintegrasi",
+  "Supervisi dokter medis — diagnosa fisik and psikosomatis terintegrasi",
 ];
 
 export default function Agitation() {
