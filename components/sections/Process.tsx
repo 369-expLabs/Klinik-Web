@@ -1,3 +1,10 @@
+"use client";
+import { useEffect, useRef } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const steps = [
   {
     num: "01",
@@ -26,18 +33,38 @@ const steps = [
 ];
 
 export default function Process() {
+  const containerRef = useRef<HTMLElement>(null);
+  const cardsRef = useRef<(HTMLDivElement | null)[]>([]);
+
+  useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        cardsRef.current,
+        { opacity: 0, y: 30 },
+        {
+          opacity: 1, y: 0,
+          duration: 0.6,
+          stagger: 0.15,
+          ease: "power2.out",
+          scrollTrigger: { trigger: containerRef.current, start: "top 80%" }
+        }
+      );
+    }, containerRef);
+    return () => ctx.revert();
+  }, []);
+
   return (
-    <section id="proses" className="bg-cream-dark py-20 md:py-28 px-4 md:px-8">
+    <section id="proses" ref={containerRef} className="bg-cream-dark py-20 md:py-28 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
-          <p className="text-xs font-semibold tracking-widest uppercase text-sage font-dm mb-3">
+          <p className="text-xs font-semibold tracking-widest uppercase text-sage font-inter mb-3">
             Prosesnya Transparan
           </p>
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-charcoal mb-4">
             Sederhana, Sadar, dan{" "}
             <span className="italic text-sage-dark">Menenangkan</span>
           </h2>
-          <p className="text-taupe font-dm max-w-xl mx-auto text-base leading-relaxed">
+          <p className="text-taupe font-inter max-w-xl mx-auto text-base leading-relaxed">
             Tidak ada yang misterius. Kamu tidak akan pingsan, tidak akan
             kehilangan kesadaran, dan tidak bisa dipaksa melakukan apa pun
             yang tidak kamu inginkan.
@@ -47,19 +74,23 @@ export default function Process() {
         {/* Process steps */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-14">
           {steps.map((step, i) => (
-            <div key={i} className="bg-cream rounded-2xl p-7 border border-cream-dark relative">
+            <div
+              key={i}
+              ref={(el) => { cardsRef.current[i] = el; }}
+              className="bg-cream rounded-2xl p-7 border border-cream-dark relative"
+            >
               <div className="text-5xl font-playfair font-bold text-sage/20 mb-4">
                 {step.num}
               </div>
               <h3 className="font-playfair text-lg font-semibold text-charcoal mb-1">
                 {step.title}
               </h3>
-              <p className="text-xs text-sage font-dm font-semibold mb-4 uppercase tracking-wide">
+              <p className="text-xs text-sage font-inter font-semibold mb-4 uppercase tracking-wide">
                 {step.duration}
               </p>
-              <p className="text-sm text-taupe font-dm leading-relaxed">{step.desc}</p>
+              <p className="text-sm text-taupe font-inter leading-relaxed">{step.desc}</p>
               {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-1/2 -right-3 text-sage-light text-xl z-10">
+                <div className="hidden lg:block absolute top-1/2 -right-3 text-sage-light text-xl z-10 transition-transform hover:translate-x-1">
                   →
                 </div>
               )}
@@ -71,13 +102,13 @@ export default function Process() {
         <div className="bg-sage-dark rounded-3xl p-8 md:p-10 flex flex-col md:flex-row items-center gap-8">
           <div className="text-5xl flex-shrink-0">🧘</div>
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-sage-light font-dm mb-2">
+            <p className="text-xs font-semibold tracking-widest uppercase text-sage-light font-inter mb-2">
               Exclusive After-Care
             </p>
             <h3 className="font-playfair text-2xl font-bold text-cream mb-3">
               Komunitas Meditasi HOPE
             </h3>
-            <p className="text-sage-light font-dm text-sm leading-relaxed">
+            <p className="text-sage-light font-inter text-sm leading-relaxed">
               Setelah sesi selesai, perjalananmu tidak berakhir. Kamu
               bergabung ke komunitas meditasi mingguan bersama pasien HOPE
               lainnya — dipandu oleh tim kami untuk menjaga stabilitas emosi

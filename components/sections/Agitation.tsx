@@ -19,14 +19,14 @@ export default function Agitation() {
     <section className="bg-cream py-20 md:py-28 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
-          <p className="text-xs font-semibold tracking-widest uppercase text-sage font-dm mb-3">
+          <p className="text-xs font-semibold tracking-widest uppercase text-sage font-inter mb-3">
             Mengapa Cara Lama Gagal
           </p>
           <h2 className="font-playfair text-3xl md:text-4xl font-bold text-charcoal mb-4">
             Kenapa Masalahmu{" "}
             <span className="italic text-sage-dark">Selalu Kambuh?</span>
           </h2>
-          <p className="text-taupe font-dm max-w-xl mx-auto text-base leading-relaxed">
+          <p className="text-taupe font-inter max-w-xl mx-auto text-base leading-relaxed">
             Bukan karena kamu tidak cukup berusaha. Tapi karena cara yang kamu
             gunakan selama ini hanya menyentuh permukaan — bukan akarnya.
           </p>
@@ -35,14 +35,14 @@ export default function Agitation() {
         <div className="grid md:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-cream-dark shadow-sm">
           {/* Old way */}
           <div className="bg-[#FFF5F5] p-8 md:p-10">
-            <p className="text-xs font-bold tracking-widest uppercase text-red-400 font-dm mb-6">
+            <p className="text-xs font-bold tracking-widest uppercase text-red-400 font-inter mb-6">
               ❌ Cara Lama
             </p>
             <ul className="space-y-4">
               {old_ways.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="text-red-300 mt-0.5 flex-shrink-0 text-lg">✗</span>
-                  <span className="text-sm text-red-900/70 font-dm leading-relaxed">{item}</span>
+                  <span className="text-sm text-red-900/70 font-inter leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
@@ -50,14 +50,14 @@ export default function Agitation() {
 
           {/* HOPE way */}
           <div className="bg-sage-dark p-8 md:p-10">
-            <p className="text-xs font-bold tracking-widest uppercase text-gold font-dm mb-6">
+            <p className="text-xs font-bold tracking-widest uppercase text-gold font-inter mb-6">
               ✓ House of Peace
             </p>
             <ul className="space-y-4">
               {hope_ways.map((item, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="text-gold mt-0.5 flex-shrink-0 text-lg">✓</span>
-                  <span className="text-sm text-cream/90 font-dm leading-relaxed">{item}</span>
+                  <span className="text-sm text-cream/90 font-inter leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>

@@ -10,8 +10,8 @@ const config: Config = {
     extend: {
       colors: {
         cream: {
-          DEFAULT: "#FDFBF7",
-          dark: "#F0EBE0",
+          DEFAULT: "#F9F7F2", // Updated to Jungian cream
+          dark: "#EAEADF",
         },
         sage: {
           light: "#B5BDA8",
@@ -20,7 +20,11 @@ const config: Config = {
         },
         charcoal: {
           soft: "#474B4C",
-          DEFAULT: "#2F3132",
+          DEFAULT: "#333333", // Updated charcoal
+        },
+        forest: {
+          DEFAULT: "#214326", // New primary CTA
+          light: "#2A5631",
         },
         gold: {
           light: "#E8D08A",
@@ -33,7 +37,10 @@ const config: Config = {
       },
       fontFamily: {
         playfair: ["Playfair Display", "serif"],
-        dm: ["DM Sans", "sans-serif"],
+        inter: ["Inter", "sans-serif"],
+      },
+      boxShadow: {
+        'glow': '0 0 20px rgba(33, 67, 38, 0.4)',
       },
       animation: {
         "fade-up": "fadeUp 0.7s ease forwards",
@@ -47,6 +54,10 @@ const config: Config = {
         fadeIn: {
           "0%": { opacity: "0" },
           "100%": { opacity: "1" },
+        },
+        pulseGlow: {
+          "0%, 100%": { boxShadow: "0 0 0px 0px rgba(33, 67, 38, 0)" },
+          "50%": { boxShadow: "0 0 25px 8px rgba(33, 67, 38, 0.8)" },
         },
       },
     },

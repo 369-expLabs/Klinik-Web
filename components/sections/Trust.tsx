@@ -27,7 +27,7 @@ export default function Trust() {
                 <div className="w-20 h-20 rounded-full bg-sage/20 mx-auto mb-3 flex items-center justify-center">
                   <span className="text-3xl">👩‍⚕️</span>
                 </div>
-                <p className="text-sage-light text-xs font-dm">
+                <p className="text-sage-light text-xs font-inter">
                   Foto Dr. Yuliana<br />
                   <span className="text-sage/60">Ganti: /public/dr-yuliana.jpg</span>
                 </p>
@@ -36,17 +36,17 @@ export default function Trust() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-sage font-dm mb-3">
+            <p className="text-xs font-semibold tracking-widest uppercase text-sage font-inter mb-3">
               Ditangani Langsung Oleh
             </p>
             <h2 className="font-playfair text-3xl md:text-4xl font-bold text-cream mb-2">
               Dr. Yuliana, CHt®
             </h2>
-            <p className="text-gold font-dm text-sm mb-6">
+            <p className="text-gold font-inter text-sm mb-6">
               Medical Doctor & Clinical Hypnotherapist
             </p>
 
-            <p className="text-taupe-light font-dm text-sm leading-relaxed mb-7">
+            <p className="text-taupe-light font-inter text-sm leading-relaxed mb-7">
               Dengan latar belakang medis dan spesialisasi hipnoterapi klinis,
               Dr. Yuliana memberikan pendekatan yang unik: menangani masalah
               mental dan emosional sekaligus mengidentifikasi dampak fisiknya.
@@ -58,7 +58,7 @@ export default function Trust() {
               {credentials.map((c, i) => (
                 <li key={i} className="flex items-start gap-3">
                   <span className="text-gold mt-0.5 flex-shrink-0">✓</span>
-                  <span className="text-sm text-cream/80 font-dm leading-relaxed">{c}</span>
+                  <span className="text-sm text-cream/80 font-inter leading-relaxed">{c}</span>
                 </li>
               ))}
             </ul>
@@ -67,7 +67,7 @@ export default function Trust() {
 
         {/* AS SEEN ON */}
         <div className="border-t border-charcoal-soft pt-16">
-          <p className="text-center text-xs font-semibold tracking-widest uppercase text-sage font-dm mb-10">
+          <p className="text-center text-xs font-semibold tracking-widest uppercase text-sage font-inter mb-10">
             Dipercaya & Diliput Oleh
           </p>
           <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-10 gap-4">
@@ -76,13 +76,13 @@ export default function Trust() {
                 key={i}
                 className="bg-charcoal-soft rounded-xl px-3 py-3 flex items-center justify-center border border-sage/10 hover:border-sage/30 transition-colors"
               >
-                <span className="text-xs text-taupe font-dm text-center leading-tight">
+                <span className="text-xs text-taupe font-inter text-center leading-tight">
                   {logo}
                 </span>
               </div>
             ))}
           </div>
-          <p className="text-center text-sage text-xs font-dm mt-6">
+          <p className="text-center text-sage text-xs font-inter mt-6">
             + 20 media nasional lainnya
           </p>
         </div>

@@ -7,37 +7,37 @@ export default function Footer() {
             <h3 className="font-playfair text-xl font-bold text-cream mb-2">
               House of Peace
             </h3>
-            <p className="text-sm text-taupe-light leading-relaxed font-dm">
+            <p className="text-sm text-taupe-light leading-relaxed font-inter">
               Hypnotherapy & Wellness Center<br />
               Kedoya Utara, Kebon Jeruk<br />
               Jakarta Barat 11520
             </p>
           </div>
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-sage-light mb-4 font-dm">
+            <p className="text-xs font-semibold tracking-widest uppercase text-sage-light mb-4 font-inter">
               Layanan
             </p>
-            <ul className="space-y-2 text-sm text-taupe-light font-dm">
+            <ul className="space-y-2 text-sm text-taupe-light font-inter">
               <li>Individual Hypnotherapy</li>
               <li>Konsultasi Online</li>
               <li>Komunitas Meditasi HOPE</li>
             </ul>
           </div>
           <div>
-            <p className="text-xs font-semibold tracking-widest uppercase text-sage-light mb-4 font-dm">
+            <p className="text-xs font-semibold tracking-widest uppercase text-sage-light mb-4 font-inter">
               Kontak
             </p>
-            <p className="text-sm text-taupe-light font-dm leading-relaxed">
+            <p className="text-sm text-taupe-light font-inter leading-relaxed">
               WhatsApp tersedia untuk konsultasi & booking.<br />
               Kami merespon dalam 1×24 jam.
             </p>
           </div>
         </div>
         <div className="border-t border-charcoal-soft pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-sage font-dm">
+          <p className="text-xs text-sage font-inter">
             © {new Date().getFullYear()} House of Peace. All rights reserved.
           </p>
-          <p className="text-xs text-sage font-dm">
+          <p className="text-xs text-sage font-inter">
             Kerahasiaan pasien dijamin sepenuhnya.
           </p>
         </div>

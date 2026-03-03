@@ -2,6 +2,8 @@ import Navbar from "@/components/ui/Navbar";
 import Hero from "@/components/sections/Hero";
 import PainMirror from "@/components/sections/PainMirror";
 import DeeperPain from "@/components/sections/DeeperPain";
+import IcebergTransitionWrapper from "@/components/sections/IcebergTransitionWrapper";
+import ComparisonTable from "@/components/sections/ComparisonTable";
 import Agitation from "@/components/sections/Agitation";
 import Urgency from "@/components/sections/Urgency";
 import Solution from "@/components/sections/Solution";
@@ -17,10 +19,13 @@ export default function LandingPage() {
     <main className="overflow-x-hidden">
       <Navbar />
       <Hero />
-      <PainMirror />
-      <DeeperPain />
+      <IcebergTransitionWrapper>
+        <PainMirror />
+        <DeeperPain />
+      </IcebergTransitionWrapper>
       <Agitation />
       <Urgency />
+      <ComparisonTable />
       <Solution />
       <Trust />
       <Process />
