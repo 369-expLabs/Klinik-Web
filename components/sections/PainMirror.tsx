@@ -2,27 +2,41 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import {
+  Waves,
+  Fire,
+  Snowflake,
+  MoonStars
+} from "@phosphor-icons/react";
+import type { Icon as PhosphorIcon } from "@phosphor-icons/react";
 
 gsap.registerPlugin(ScrollTrigger);
 
-const problems = [
+type Problem = {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  Icon: React.ComponentType<any>;
+  title: string;
+  desc: string;
+};
+
+const problems: Problem[] = [
   {
-    icon: "🌀",
+    Icon: Waves,
     title: "Pikiran Berisik & Cemas",
     desc: "Pikiran tidak bisa berhenti berputar. Khawatir terus-menerus tentang hal yang belum tentu terjadi. Sulit tidur karena kepala penuh.",
   },
   {
-    icon: "💥",
+    Icon: Fire,
     title: "Emosi Meledak & Menyesal",
     desc: "Marah tiba-tiba tanpa alasan jelas, lalu menyesal. Merasa tidak bisa mengontrol reaksi sendiri. Orang-orang terdekat mulai menjauh.",
   },
   {
-    icon: "❄️",
+    Icon: Snowflake,
     title: "Rumah Tangga Terasa Dingin",
     desc: "Hubungan dengan pasangan terasa kosong. Sering salah paham. Komunikasi sudah tidak nyaman — bahkan menghindari pembicaraan penting.",
   },
   {
-    icon: "🌑",
+    Icon: MoonStars,
     title: "Trauma & Luka Batin",
     desc: "Ada kejadian masa lalu yang terus membayangi. Sudah mencoba melupakannya, tapi rasanya selalu kembali di saat yang tidak terduga.",
   },
@@ -41,12 +55,12 @@ export default function PainMirror() {
         {
           opacity: 1,
           y: 0,
-          duration: 0.6,
-          stagger: 0.1,
+          duration: 0.7,
+          stagger: 0.15,
           ease: "power2.out",
           scrollTrigger: {
             trigger: containerRef.current,
-            start: "top 80%", // trigger when top of section hits 80% down viewport
+            start: "top 75%", // trigger when top of section hits 75% down viewport
           }
         }
       );
@@ -58,46 +72,58 @@ export default function PainMirror() {
   return (
     <section ref={containerRef} className="bg-cream-dark py-20 md:py-28 px-4 md:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-14">
-          <p className="text-xs font-semibold tracking-widest uppercase text-sage font-inter mb-3">
-            Apakah Ini Terasa Familiar?
-          </p>
-          <h2 className="font-playfair text-3xl md:text-4xl font-bold text-charcoal mb-4">
-            Apa yang Membuat Hidupmu{" "}
-            <span className="italic text-sage-dark">Terasa Berat?</span>
-          </h2>
-          <p className="text-taupe font-inter max-w-xl mx-auto text-base leading-relaxed">
-            Kamu tidak sendirian. Jutaan orang merasakan hal yang sama — dan
-            banyak dari mereka sudah menemukan jalan keluarnya.
-          </p>
+
+        {/* Anti-Center Bias: Split Screen Header Layout (Skill §3) */}
+        <div className="mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div className="max-w-xl">
+            <p className="text-xs font-semibold tracking-widest uppercase text-sage font-outfit mb-4">
+              Apakah Ini Terasa Familiar?
+            </p>
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-charcoal leading-tight">
+              Apa yang Membuat Hidupmu{" "}
+              <span className="italic text-sage-dark block mt-1">Terasa Berat?</span>
+            </h2>
+          </div>
+          <div className="max-w-md md:text-right">
+            <p className="text-taupe font-outfit text-base leading-relaxed">
+              Kamu tidak sendirian. Jutaan orang merasakan hal yang sama — dan
+              banyak dari mereka sudah menemukan jalan keluarnya.
+            </p>
+          </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {problems.map((item, i) => (
-            <div
-              key={i}
-              ref={(el) => { cardsRef.current[i] = el; }}
-              className={`bg-cream rounded-2xl p-7 border border-cream-dark hover:shadow-md transition-shadow duration-200 group ${i % 2 === 0 ? "md:translate-y-10" : ""
-                }`}
-            >
-              <div className="text-3xl mb-4">{item.icon}</div>
-              <h3 className="font-playfair text-lg font-semibold text-charcoal mb-3 group-hover:text-sage-dark transition-colors">
-                {item.title}
-              </h3>
-              <p className="text-sm text-taupe font-inter leading-relaxed">
-                {item.desc}
-              </p>
-            </div>
-          ))}
+        {/* 2x2 Bento Grid replacing the generic 4-col string (Skill §7) */}
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+          {problems.map((item, i) => {
+            const { Icon } = item;
+            return (
+              <div
+                key={i}
+                ref={(el) => { cardsRef.current[i] = el; }}
+                // Asymmetric offset: right column is shifted down for a dynamic layout
+                className={`premium-glass-card p-8 lg:p-10 relative ${i % 2 === 1 ? "md:translate-y-12" : ""}`}
+              >
+                <div className="mb-6 w-14 h-14 rounded-2xl bg-charcoal-soft/5 flex items-center justify-center border border-charcoal-soft/10">
+                  <Icon size={28} weight="duotone" className="text-sage-dark" />
+                </div>
+                <h3 className="font-playfair text-2xl font-semibold text-charcoal mb-4">
+                  {item.title}
+                </h3>
+                <p className="text-base text-taupe font-outfit leading-relaxed max-w-[65ch]">
+                  {item.desc}
+                </p>
+              </div>
+            );
+          })}
         </div>
 
-        <div className="mt-10 text-center">
-          <p className="text-taupe font-inter text-sm italic">
+        <div className="mt-24 md:mt-32 pt-10 border-t border-charcoal-soft/10 text-center">
+          <p className="text-taupe font-outfit text-sm italic tracking-wide">
             Jika kamu mengangguk membaca salah satu di atas — ini bukan
             kebetulan. Kamu berada di tempat yang tepat.
           </p>
         </div>
       </div>
-    </section >
+    </section>
   );
 }
