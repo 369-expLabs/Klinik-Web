@@ -1,56 +1,24 @@
 "use client";
-import { useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
-import { motion, Variants } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { WhatsappLogo, ArrowRight } from "@phosphor-icons/react";
+import { WhatsappLogo, ArrowRight } from "@phosphor-icons/react"; // Mengikuti Rule Icons SKILL.md
 
 gsap.registerPlugin(ScrollTrigger);
 
-const WA_NUMBER = "6281234567890"; // TODO: replace with real number
-const WA_MESSAGE = encodeURIComponent(
-  "Halo, saya ingin konsultasi tentang terapi di House of Peace."
-);
-const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MESSAGE}`;
-
-// Framer Motion Variants - High Agency Stagger (Skill Rule)
-const containerVariants: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.15,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-// Framer Motion Spring Physics (stiffness: 100, damping: 20)
-const itemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      type: "spring",
-      stiffness: 100,
-      damping: 20,
-    },
-  },
-};
-
 export default function Hero() {
+  const [visible, setVisible] = useState(false);
   const heroRef = useRef<HTMLElement>(null);
   const badgesRef = useRef<(HTMLDivElement | null)[]>([]);
 
   useEffect(() => {
-    // Setup Parallax for badges (Liquid Glass floats)
+    const t = setTimeout(() => setVisible(true), 100);
     const ctx = gsap.context(() => {
       badgesRef.current.forEach((badge) => {
         if (!badge) return;
         gsap.to(badge, {
-          yPercent: -15, // Move upwards relative to its own height
+          yPercent: -20, // Parallax lebih intens
           ease: "none",
           scrollTrigger: {
             trigger: heroRef.current,
@@ -61,130 +29,63 @@ export default function Hero() {
         });
       });
     }, heroRef);
-
-    return () => ctx.revert();
+    return () => { clearTimeout(t); ctx.revert(); };
   }, []);
 
   return (
+    // Rule: Viewport Stability [CRITICAL] - Menggunakan min-h-[100dvh]
     <section ref={heroRef} className="relative min-h-[100dvh] bg-cream flex items-center overflow-hidden">
-      {/* Decorative background blobs */}
-      <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-sage/10 rounded-full blur-3xl -translate-y-1/3 translate-x-1/3 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-[400px] h-[400px] bg-gold/8 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 pointer-events-none" />
+      {/* Variance 8: Asymmetric background positioning */}
+      <div className="absolute top-[-10%] right-[-5%] w-[70vw] h-[70vw] bg-sage/5 rounded-full blur-[120px] pointer-events-none" />
 
-      {/* Asymmetric layout container: increased left padding, right side leaks outside boundary */}
-      <div className="w-full pl-6 md:pl-16 lg:pl-32 pr-0 pt-32 pb-20">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-12 lg:gap-20">
+      <div className="max-w-7xl mx-auto px-4 md:px-8 pt-32 pb-20 w-full">
+        <div className="grid lg:grid-cols-[1.2fr_1fr] gap-16 items-center">
 
-          {/* Left: Copy & CTA */}
-          <motion.div
-            className="w-full md:w-1/2 relative z-30 pr-6 md:pr-0"
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-          >
-            {/* Social proof bar */}
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-3 bg-cream-dark border border-cream-dark rounded-full px-4 py-2 mb-8">
-              <span className="text-xs font-semibold text-sage-dark tracking-wide font-satoshi uppercase">
-                5.000+ Pasien Telah Pulih
+          {/* Left: Copy with Deterministic Typography */}
+          <div className={`transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-12"}`}>
+            <div className="inline-flex items-center gap-2 bg-sage/10 border border-sage/20 rounded-full px-4 py-1.5 mb-8">
+              <span className="text-[10px] font-bold text-sage-dark tracking-[0.2em] uppercase">
+                Established 2025
               </span>
-              <span className="text-taupe-light">·</span>
-              <span className="text-xs text-taupe font-satoshi">Dipercaya Dokter & Psikolog</span>
-            </motion.div>
-
-            {/* Premium Typography: tracking-tighter, leading-[0.9] */}
-            <motion.h1
-              variants={itemVariants}
-              className="font-playfair text-5xl md:text-6xl lg:text-[5rem] font-bold text-charcoal tracking-tighter leading-[0.9] mb-8 text-balance"
-            >
-              Bebaskan Diri dari{" "}
-              <span className="text-sage-dark italic">Trauma & Emosi</span>{" "}
-              yang Menyandera Hidupmu
-            </motion.h1>
-
-            {/* Max paragraph width capped at 65ch */}
-            <motion.p
-              variants={itemVariants}
-              className="text-base md:text-lg text-taupe font-satoshi leading-relaxed mb-10 max-w-[65ch]"
-            >
-              Selesaikan masalah mental & perilaku langsung ke akarnya.{" "}
-              <strong className="text-charcoal font-medium">Cepat, permanen, 100% tanpa obat.</strong>{" "}
-              90% pasien merasakan perubahan sejak sesi pertama.
-            </motion.p>
-
-            <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4">
-              {/* Tactile Feedback Buttons via Framer Motion */}
-              <motion.a
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                href={WA_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 bg-forest text-cream font-medium px-8 py-4 rounded-full transition-colors duration-300 font-satoshi text-sm shadow-md hover:shadow-glow"
-              >
-                <WhatsappLogo size={20} weight="regular" />
-                Konsultasikan Masalah Saya
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                href="#proses"
-                className="inline-flex items-center justify-center gap-2 border border-sage text-charcoal font-medium px-8 py-4 rounded-full transition-colors duration-200 hover:bg-sage/10 font-satoshi text-sm"
-              >
-                Pelajari Prosesnya <ArrowRight size={18} weight="regular" />
-              </motion.a>
-            </motion.div>
-
-            {/* Trust badges */}
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-6 mt-12 pt-8 border-t border-cream-dark/50">
-              {[
-                "100% Tanpa Obat",
-                "Supervisi Dokter Medis",
-                "Rahasia Terjamin",
-              ].map((badge) => (
-                <div key={badge} className="flex items-center gap-2">
-                  <span className="w-4 h-4 rounded-full bg-sage-dark flex items-center justify-center text-white text-[10px]">✓</span>
-                  <span className="text-xs text-taupe font-satoshi font-medium">{badge}</span>
-                </div>
-              ))}
-            </motion.div>
-          </motion.div>
-
-          {/* Right: Illustration placeholder (Overlapping right boundary) */}
-          <motion.div
-            className="w-full md:w-1/2 lg:w-[55%] relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ type: "spring", stiffness: 100, damping: 20, delay: 0.2 }}
-          >
-            <div className="relative w-full aspect-[4/3] md:aspect-square bg-cream-dark rounded-l-3xl md:rounded-l-[3rem] overflow-hidden border-l border-t border-b border-cream-dark shadow-2xl">
-              <Image
-                src="/illustrations/hero.jpg"
-                alt="Bebaskan diri dari trauma — wanita merasakan kebebasan di alam terbuka"
-                fill
-                className="object-cover"
-                priority
-              />
             </div>
 
-            {/* Liquid Glass Badge 1 — Light Refraction */}
-            <div
-              ref={(el) => { badgesRef.current[0] = el; }}
-              className="premium-glass-card absolute bottom-12 -left-8 md:-left-12 px-6 py-5 z-30 shadow-2xl rounded-2xl"
-            >
-              <p className="text-3xl font-bold font-playfair text-charcoal leading-none mb-1">90%</p>
-              <p className="text-xs text-taupe font-satoshi">Merasakan perubahan<br />sejak sesi pertama</p>
+            {/* Rule: tracking-tighter & leading-none untuk Premium Look */}
+            <h1 className="font-playfair text-5xl md:text-7xl lg:text-8xl font-bold text-charcoal tracking-tighter leading-[0.95] mb-8 text-balance">
+              Bebaskan Diri dari <br />
+              <span className="text-sage-dark italic font-normal">Trauma & Emosi</span>
+            </h1>
+
+            {/* Rule: max-w-[65ch] untuk readability */}
+            <p className="text-lg text-taupe leading-relaxed mb-10 max-w-[50ch]">
+              Selesaikan masalah mental langsung ke akarnya.
+              <span className="text-charcoal font-medium"> Cepat, permanen, dan tanpa obat.</span>
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-5">
+              {/* Rule: Tactile Feedback active:scale-[0.98] */}
+              <a href="#" className="inline-flex items-center justify-center gap-3 bg-sage-dark text-cream font-semibold px-10 py-5 rounded-full transition-all active:scale-[0.96] shadow-xl hover:shadow-sage/20">
+                <WhatsappLogo size={20} weight="bold" />
+                Konsultasi Sekarang
+              </a>
+              <a href="#proses" className="inline-flex items-center justify-center gap-2 group text-charcoal font-semibold px-8 py-5">
+                Pelajari Proses <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+              </a>
+            </div>
+          </div>
+
+          {/* Right: Asymmetric Asset & Liquid Glass */}
+          <div className={`relative transition-all duration-1000 delay-300 ${visible ? "opacity-100 translate-x-0" : "opacity-0 translate-x-12"}`}>
+            <div className="relative z-10 rounded-[3rem] overflow-hidden shadow-2xl rotate-[-2deg] hover:rotate-0 transition-transform duration-700">
+              <Image src="/illustrations/hero.jpg" alt="Healing" width={800} height={1000} className="w-full object-cover aspect-[4/5]" priority />
             </div>
 
-            {/* Liquid Glass Badge 2 — Dark Refraction */}
-            <div
-              ref={(el) => { badgesRef.current[1] = el; }}
-              className="premium-glass-dark absolute top-12 right-12 px-6 py-5 z-30 shadow-2xl rounded-2xl"
-            >
-              <p className="text-3xl font-bold font-playfair text-cream leading-none mb-1">5.000+</p>
-              <p className="text-xs text-sage-light font-satoshi">Pasien telah pulih</p>
+            {/* Rule: Liquid Glass Refraction (Inner border + Inner shadow) */}
+            <div ref={(el) => { badgesRef.current[0] = el; }}
+              className="absolute -bottom-8 -left-8 p-8 z-20 premium-glass-card shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] border-white/30">
+              <p className="text-4xl font-bold font-playfair text-charcoal tracking-tighter">90%</p>
+              <p className="text-[10px] uppercase tracking-widest text-taupe font-bold mt-1">Success Rate</p>
             </div>
-          </motion.div>
-
+          </div>
         </div>
       </div>
     </section>
