@@ -8,23 +8,19 @@ gsap.registerPlugin(ScrollTrigger);
 const loudQuestions = [
   {
     text: "Pikiran Berputar Tanpa Henti?",
-    offset: "md:-translate-x-12",
-    align: "text-left",
+    align: "self-start text-left",
   },
   {
     text: "Marah Tiba-Tiba, Lalu Menyesal?",
-    offset: "md:translate-x-24 md:translate-y-12",
-    align: "text-right md:text-center",
+    align: "self-end text-right md:text-center",
   },
   {
     text: "Rumah Tangga Terasa Semakin Dingin?",
-    offset: "md:-translate-x-24 md:translate-y-24",
-    align: "text-left",
+    align: "self-start text-left md:translate-x-12",
   },
   {
     text: "Masa Lalu Masih Terus Membayangi?",
-    offset: "md:translate-x-12 md:translate-y-32",
-    align: "text-right",
+    align: "self-end text-right md:-translate-x-12",
   },
 ];
 
@@ -99,13 +95,23 @@ export default function PainMirror() {
           </div>
         </div>
 
-        {/* Action Area: Loud Typography & Asymmetric Kinetic Layout (Variance 8) */}
-        <div className="flex flex-col gap-16 md:gap-8 pb-32">
+        {/* Action Area: Loud Typography & Asymmetric Kinetic Layout (Variance 8) with Text-as-Window */}
+        <div className="flex flex-col gap-12 md:gap-24 pb-32">
           {loudQuestions.map((item, i) => (
             <h3
               key={i}
               ref={(el) => { questionsRef.current[i] = el; }}
-              className={`font-playfair text-5xl md:text-7xl lg:text-8xl font-bold text-cream tracking-tighter leading-[0.85] text-balance will-change-[filter,transform,opacity] ${item.offset} ${item.align}`}
+              className={`font-playfair text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.85] text-balance will-change-[filter,transform,opacity] ${item.align}`}
+              style={{
+                color: "transparent",
+                backgroundImage: "url('/illustrations/iceberg.png')",
+                backgroundClip: "text",
+                WebkitBackgroundClip: "text",
+                backgroundAttachment: "fixed",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                transform: "translateZ(0)", // Hardware Acceleration
+              }}
             >
               {item.text}
             </h3>
