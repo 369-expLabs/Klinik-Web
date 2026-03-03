@@ -95,23 +95,13 @@ export default function PainMirror() {
           </div>
         </div>
 
-        {/* Action Area: Loud Typography & Asymmetric Kinetic Layout (Variance 8) with Text-as-Window */}
+        {/* Action Area: Loud Typography and Asymmetric Kinetic Layout (Variance 8) */}
         <div className="flex flex-col gap-12 md:gap-24 pb-32">
           {loudQuestions.map((item, i) => (
             <h3
               key={i}
               ref={(el) => { questionsRef.current[i] = el; }}
-              className={`font-playfair text-6xl md:text-8xl lg:text-9xl font-bold tracking-tighter leading-[0.85] text-balance will-change-[filter,transform,opacity] ${item.align}`}
-              style={{
-                color: "transparent",
-                backgroundImage: "url('/illustrations/iceberg.png')",
-                backgroundClip: "text",
-                WebkitBackgroundClip: "text",
-                backgroundAttachment: "fixed",
-                backgroundPosition: "center",
-                backgroundSize: "cover",
-                transform: "translateZ(0)", // Hardware Acceleration
-              }}
+              className={`font-playfair text-6xl md:text-8xl lg:text-[120px] font-bold text-cream tracking-tighter leading-[0.85] text-balance will-change-[filter,transform,opacity] ${item.align}`}
             >
               {item.text}
             </h3>
