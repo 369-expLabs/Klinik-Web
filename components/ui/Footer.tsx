@@ -1,13 +1,13 @@
 export default function Footer() {
   return (
-    <footer className="bg-charcoal text-cream py-24 md:py-32 px-4 md:px-8 border-t border-white/5 relative overflow-hidden">
+    <footer className="bg-charcoal text-cream pt-24 pb-12 md:pt-32 md:pb-16 px-4 md:px-8 border-t border-white/5 relative overflow-hidden">
       {/* Optional ambient background texture (subtle) */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-sage/5 rounded-full blur-[150px] pointer-events-none translate-x-1/3 -translate-y-1/2" />
 
       <div className="max-w-7xl mx-auto relative z-10">
 
         {/* Asymmetric Architecture (Variance 8) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-12 lg:gap-20 mb-20 md:mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-[2fr_1fr_1fr] gap-12 lg:gap-20 mb-24 md:mb-32">
 
           {/* Brand Anchor */}
           <div className="flex flex-col">
@@ -28,21 +28,18 @@ export default function Footer() {
             </p>
             <ul className="space-y-4 text-sm text-taupe-light font-satoshi">
               <li>
-                <a href="#layanan" className="hover:text-cream transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] inline-block relative group">
+                <a href="#layanan" className="inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-1 hover:text-cream">
                   Individual Hypnotherapy
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-sage-light transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full"></span>
                 </a>
               </li>
               <li>
-                <a href="#layanan" className="hover:text-cream transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] inline-block relative group">
+                <a href="#layanan" className="inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-1 hover:text-cream">
                   Konsultasi Online
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-sage-light transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full"></span>
                 </a>
               </li>
               <li>
-                <a href="#proses" className="hover:text-cream transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] inline-block relative group">
+                <a href="#proses" className="inline-block transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] hover:translate-x-1 hover:text-cream">
                   Komunitas Meditasi HOPE
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-sage-light transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:w-full"></span>
                 </a>
               </li>
             </ul>
@@ -60,7 +57,7 @@ export default function Footer() {
               href="https://wa.me/6281234567890?text=Halo%2C%20saya%20ingin%20tanya%20jadwal"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-sage-light font-satoshi text-sm font-semibold hover:text-white transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
+              className="inline-flex items-center gap-2 text-sage-light font-satoshi text-sm font-semibold hover:text-white hover:translate-x-1 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]"
             >
               Hubungi via WA &rarr;
             </a>
