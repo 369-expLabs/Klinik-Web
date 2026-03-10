@@ -45,6 +45,7 @@ export default function Footer() {
             </p>
             <ul className="space-y-4 text-sm text-taupe-light font-satoshi">
               <li><Link href="/tentang-kami" className="inline-block transition-transform duration-300 hover:translate-x-1 hover:text-cream">Tentang Kami</Link></li>
+              <li><Link href="/blog" className="inline-block transition-transform duration-300 hover:translate-x-1 hover:text-cream">Blog</Link></li>
               <li><Link href="/tentang-kami#dokter" className="inline-block transition-transform duration-300 hover:translate-x-1 hover:text-cream">Dr. Yuliana</Link></li>
               <li><Link href="/kontak" className="inline-block transition-transform duration-300 hover:translate-x-1 hover:text-cream">Kontak</Link></li>
             </ul>
